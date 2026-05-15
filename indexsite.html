@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulso — A operação comercial dos consultórios de saúde estética</title>
+<meta name="description" content="Pulso é a aceleradora comercial dos profissionais de saúde estética premium. Diagnóstico, Caixa Rápido, Arquitetura Digital e Engenharia de Receita em 12 semanas.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Pulso — A operação comercial dos consultórios de saúde estética">
+<meta property="og:description" content="Consultório que cresce não improvisa operação comercial. 4 pilares. 12 semanas.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://usepulso.org">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Favicon (placeholder — substituir por arquivo .ico/png real) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0A0A'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23FF2D5F'/%3E%3C/svg%3E">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============ RESET ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:'Geist',system-ui,sans-serif;background:#0A0A0A;color:#FAFAF7;line-height:1.55;overflow-x:hidden;font-weight:400}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img,svg{max-width:100%;display:block}
+
+/* ============ TOKENS ============ */
+:root{
+  --bg:#0A0A0A;
+  --bg-2:#111113;
+  --bg-3:#16161A;
+  --line:#222226;
+  --line-2:#2E2E33;
+  --text:#FAFAF7;
+  --text-2:#A6A6A6;
+  --text-3:#6B6B6B;
+  --accent:#FF2D5F;
+  --accent-dim:#B82045;
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Geist',system-ui,sans-serif;
+  --mono:'Geist Mono','SF Mono',Menlo,monospace;
+  --pad:clamp(20px,5vw,40px);
+  --max:1280px;
+}
+
+/* ============ GRAIN ============ */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.035;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* ============ NAV ============ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  padding:18px var(--pad);
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(10,10,10,.65);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--line);
+}
+.brand{font-family:var(--serif);font-size:24px;letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
+.brand-dot{width:9px;height:9px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.7}}
+.nav-links{display:flex;gap:28px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-2)}
+.nav-links a{transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+@media (max-width:720px){.nav-links{display:none}}
+
+/* ============ LAYOUT ============ */
+section{padding:140px var(--pad) 100px;position:relative;max-width:var(--max);margin:0 auto}
+@media (max-width:720px){section{padding:100px var(--pad) 60px}}
+.section-meta{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--text-3);margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.section-meta::before{content:"";width:24px;height:1px;background:var(--text-3)}
+h2{font-family:var(--serif);font-size:clamp(40px,6vw,72px);line-height:1.02;letter-spacing:-.02em;margin-bottom:32px;font-weight:400}
+h2 em{font-style:italic;color:var(--accent)}
+.lede{font-size:clamp(18px,2.1vw,22px);color:var(--text-2);max-width:760px;line-height:1.55}
+.lede strong{color:var(--text);font-weight:500}
+
+/* ============ HERO ============ */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding-top:140px;padding-bottom:60px}
+.hero-eyebrow{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:var(--text-2);margin-bottom:48px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:"";width:36px;height:1px;background:var(--accent)}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(48px,9vw,128px);
+  line-height:.95;letter-spacing:-.025em;
+  font-weight:400;
+  max-width:18ch;
+}
+.hero h1 em{font-style:italic;color:var(--accent);font-weight:400}
+.hero-sub{margin-top:48px;font-size:clamp(17px,1.8vw,20px);color:var(--text-2);max-width:560px;line-height:1.5}
+.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:80px;flex-wrap:wrap;gap:24px}
+.hero-meta{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--text-3);line-height:1.8}
+.hero-meta span{color:var(--text-2)}
+.scroll-hint{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--text-3);display:flex;align-items:center;gap:10px}
+.scroll-hint::after{content:"↓";font-size:14px;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+/* ============ CTA ============ */
+.cta{
+  display:inline-flex;align-items:center;gap:14px;
+  font-family:var(--sans);font-size:15px;font-weight:500;
+  padding:18px 28px;border-radius:0;
+  background:var(--accent);color:#fff;
+  border:1px solid var(--accent);
+  transition:all .25s ease;
+  letter-spacing:-.005em;
+}
+.cta:hover{background:transparent;color:var(--accent);transform:translateY(-1px)}
+.cta-ghost{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.12em;
+  padding:14px 0;border-bottom:1px solid var(--line-2);color:var(--text);
+  transition:border-color .2s,gap .25s ease;
+}
+.cta-ghost:hover{border-color:var(--accent);gap:18px;color:var(--accent)}
+
+/* ============ POSICIONAMENTO ============ */
+.position-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:24px}
+@media (max-width:880px){.position-grid{grid-template-columns:1fr;gap:40px}}
+.position-grid p{font-size:18px;line-height:1.6;color:var(--text-2)}
+.position-grid p strong{color:var(--text);font-weight:500}
+.not-list{margin-top:24px}
+.not-list li{
+  font-family:var(--mono);font-size:13px;color:var(--text-3);
+  padding:14px 0;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:14px;
+}
+.not-list li::before{content:"×";color:var(--accent);font-size:18px;font-family:var(--sans)}
+
+/* ============ ICP ============ */
+.icp-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:8px;border-top:1px solid var(--line)}
+@media (max-width:720px){.icp-list{grid-template-columns:1fr}}
+.icp-item{
+  padding:32px 0;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:24px;
+}
+.icp-item:nth-child(odd){padding-right:40px}
+.icp-item:nth-child(even){padding-left:40px;border-left:1px solid var(--line)}
+@media (max-width:720px){
+  .icp-item:nth-child(odd),.icp-item:nth-child(even){padding-left:0;padding-right:0;border-left:none}
+}
+.icp-num{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.05em}
+.icp-title{font-family:var(--serif);font-size:28px;line-height:1.1;letter-spacing:-.01em}
+.icp-floor{margin-top:40px;padding:28px;background:var(--bg-2);border:1px solid var(--line);font-family:var(--mono);font-size:13px;color:var(--text-2);line-height:1.7}
+.icp-floor strong{color:var(--text);font-weight:500}
+
+/* ============ MÉTODO (4 pilares) ============ */
+.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:24px}
+@media (max-width:880px){.method-grid{grid-template-columns:1fr}}
+.pilar{
+  background:var(--bg);padding:48px 40px;position:relative;
+  transition:background .35s ease;
+}
+.pilar:hover{background:var(--bg-2)}
+.pilar-num{
+  font-family:var(--serif);font-style:italic;font-size:80px;line-height:1;
+  color:var(--accent);margin-bottom:32px;letter-spacing:-.04em;
+}
+.pilar h3{font-family:var(--serif);font-size:36px;line-height:1.1;letter-spacing:-.015em;font-weight:400;margin-bottom:16px}
+.pilar p{font-size:15px;color:var(--text-2);line-height:1.65}
+.pilar-week{position:absolute;top:32px;right:40px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-3)}
+
+/* ============ CASE ============ */
+.case-label{
+  font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--accent);padding:6px 12px;border:1px solid var(--accent);display:inline-block;margin-bottom:32px;
+}
+.case-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin-top:32px;align-items:stretch;border:1px solid var(--line)}
+@media (max-width:880px){.case-grid{grid-template-columns:1fr}}
+.case-col{padding:48px 40px;background:var(--bg)}
+.case-col.depois{background:var(--bg-2)}
+.case-arrow{
+  background:var(--bg);display:flex;align-items:center;justify-content:center;
+  padding:0 24px;border-left:1px solid var(--line);border-right:1px solid var(--line);
+  font-family:var(--serif);font-size:48px;color:var(--accent);font-style:italic;
+}
+@media (max-width:880px){.case-arrow{padding:24px;border:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line);transform:rotate(90deg)}}
+.case-heading{
+  font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.14em;
+  color:var(--text-3);margin-bottom:24px;
+}
+.case-col.depois .case-heading{color:var(--accent)}
+.case-row{padding:14px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--text-2);line-height:1.5}
+.case-row:last-child{border-bottom:none}
+.case-row strong{color:var(--text);font-weight:500;font-family:var(--mono);font-size:14px}
+.case-big{
+  font-family:var(--serif);font-size:clamp(48px,7vw,84px);line-height:1;letter-spacing:-.03em;
+  color:var(--accent);margin:8px 0 16px;font-weight:400;
+}
+.case-big em{font-style:italic}
+.case-disclaimer{
+  margin-top:32px;padding:20px 24px;border-left:2px solid var(--accent);background:var(--bg-2);
+  font-family:var(--mono);font-size:13px;color:var(--text-2);line-height:1.7;
+}
+
+/* ============ CREDIBILIDADE ============ */
+.cred{text-align:left;margin-top:24px}
+.cred-stat{
+  font-family:var(--serif);font-size:clamp(80px,14vw,180px);line-height:.9;letter-spacing:-.04em;
+  font-weight:400;
+}
+.cred-stat em{font-style:italic;color:var(--accent)}
+.cred-sub{font-size:clamp(18px,2.2vw,24px);color:var(--text-2);margin-top:24px;max-width:680px;line-height:1.45}
+.cred-sub strong{color:var(--text);font-weight:500}
+.cred-meta{margin-top:48px;display:flex;gap:48px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-3)}
+.cred-meta div{display:flex;flex-direction:column;gap:6px}
+.cred-meta span{color:var(--text);font-size:14px;text-transform:none;letter-spacing:0}
+
+/* ============ FOUNDER ============ */
+.founder{display:grid;grid-template-columns:1fr 2fr;gap:60px;margin-top:24px;align-items:start}
+@media (max-width:880px){.founder{grid-template-columns:1fr;gap:32px}}
+.founder-card{padding:32px;border:1px solid var(--line);background:var(--bg-2)}
+.founder-name{font-family:var(--serif);font-size:36px;letter-spacing:-.015em;line-height:1.05;margin-bottom:8px}
+.founder-role{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:24px}
+.founder-stats{font-family:var(--mono);font-size:12px;color:var(--text-2);line-height:2;border-top:1px solid var(--line);padding-top:20px}
+.founder-stats div{display:flex;justify-content:space-between;gap:16px}
+.founder-stats span{color:var(--text-3);text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+.founder-bio p{font-size:18px;line-height:1.65;color:var(--text-2);margin-bottom:20px}
+.founder-bio p strong{color:var(--text);font-weight:500}
+.founder-bio a{color:var(--accent);border-bottom:1px solid transparent;transition:border-color .2s}
+.founder-bio a:hover{border-bottom-color:var(--accent)}
+
+/* ============ FINAL CTA ============ */
+.final{
+  text-align:left;padding:140px var(--pad) 100px;border-top:1px solid var(--line);margin-top:80px;
+  background:linear-gradient(180deg,transparent 0%,rgba(255,45,95,0.04) 100%);
+}
+.final-inner{max-width:var(--max);margin:0 auto}
+.final h2{margin-bottom:40px;max-width:14ch}
+.final p{font-size:18px;color:var(--text-2);max-width:540px;line-height:1.55;margin-bottom:40px}
+
+/* ============ FOOTER ============ */
+footer{padding:60px var(--pad) 40px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--text-3)}
+.footer-inner{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.footer-brand{font-family:var(--serif);font-size:20px;color:var(--text)}
+.footer-meta{text-transform:uppercase;letter-spacing:.1em;line-height:1.8;text-align:right}
+@media (max-width:600px){.footer-meta{text-align:left}}
+
+/* ============ ANIMAÇÕES ============ */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* ============ SELECTION ============ */
+::selection{background:var(--accent);color:#fff}
+</style>
+</head>
+
+<body>
+
+<!-- ========== NAV ========== -->
+<nav>
+  <a href="#" class="brand"><span class="brand-dot"></span>Pulso</a>
+  <div class="nav-links">
+    <a href="#metodo">Método</a>
+    <a href="#caso">Caso</a>
+    <a href="#founder">Founder</a>
+    <a href="#contato">Contato</a>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="top">
+  <div>
+    <p class="hero-eyebrow">Pulso · Operação comercial</p>
+    <h1>Consultório que cresce não <em>improvisa</em> operação comercial.</h1>
+    <p class="hero-sub">Pulso é a aceleradora dos profissionais de saúde estética premium que decidiram tratar o consultório como negócio. <strong style="color:var(--text)">Quatro pilares. Doze semanas.</strong></p>
+  </div>
+
+  <div class="hero-foot">
+    <div class="hero-meta">
+      Saúde estética premium<br>
+      <span>Implanto · Plástica · Dermato · Dentista high-ticket</span>
+    </div>
+    <a href="#metodo" class="scroll-hint">Conheça o método</a>
+  </div>
+</section>
+
+<!-- ========== POSICIONAMENTO ========== -->
+<section id="posicionamento">
+  <p class="section-meta">01 · Posicionamento</p>
+  <h2>Não é agência. Não é tráfego. <em>É operação comercial.</em></h2>
+
+  <div class="position-grid">
+    <div>
+      <p>Pulso implementa a operação comercial inteira do consultório de saúde estética premium — do <strong>diagnóstico</strong> ao <strong>time interno fechando procedimento high-ticket</strong>. Em doze semanas.</p>
+      <p style="margin-top:24px">O foco é simples: consulta paga como porta de entrada, procedimento como margem. O resto da máquina — captação, conversão, time, processo — a gente constrói com você.</p>
+    </div>
+    <div>
+      <p style="font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--text-3);margin-bottom:12px">O que Pulso não faz</p>
+      <ul class="not-list">
+        <li>Tráfego pago avulso</li>
+        <li>Social media</li>
+        <li>Consultoria por hora</li>
+        <li>Curso, mentoria ou treinamento solto</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PARA QUEM ========== -->
+<section id="para-quem">
+  <p class="section-meta">02 · Para quem é</p>
+  <h2>Profissionais que tratam o consultório <em>como negócio</em>.</h2>
+  <p class="lede" style="margin-bottom:48px">Médicos, dentistas e cirurgiões com procedimento high-ticket que já saturaram a indicação e querem construir aquisição previsível.</p>
+
+  <ul class="icp-list">
+    <li class="icp-item"><span class="icp-num">01</span><span class="icp-title">Implantodontistas e dentistas high-ticket</span></li>
+    <li class="icp-item"><span class="icp-num">02</span><span class="icp-title">Cirurgiões plásticos</span></li>
+    <li class="icp-item"><span class="icp-num">03</span><span class="icp-title">Dermatologistas</span></li>
+    <li class="icp-item"><span class="icp-num">04</span><span class="icp-title">Médicos de saúde estética</span></li>
+  </ul>
+
+  <div class="icp-floor">
+    <strong>Critério de entrada:</strong> faturamento mensal acima de R$ 30 mil · procedimento com ticket de R$ 3 mil ou mais · disposição para construir time comercial interno.
+  </div>
+</section>
+
+<!-- ========== MÉTODO ========== -->
+<section id="metodo">
+  <p class="section-meta">03 · Método</p>
+  <h2>Quatro pilares. <em>Doze semanas.</em></h2>
+  <p class="lede">A sequência não é negociável — cada pilar destrava o próximo. Diagnóstico antes de execução. Caixa antes de escala. Estrutura antes de time.</p>
+
+  <div class="method-grid">
+    <div class="pilar">
+      <span class="pilar-week">Semanas 01–02</span>
+      <div class="pilar-num"><em>01</em></div>
+      <h3>Diagnóstico</h3>
+      <p>Raio-X completo do negócio. Cenário atual, gaps de receita, GTM, proposta única de valor, cronograma. Você sai com o mapa antes de qualquer execução — sem mapa, qualquer estrada vira labirinto.</p>
+    </div>
+
+    <div class="pilar">
+      <span class="pilar-week">Semanas 02–05</span>
+      <div class="pilar-num"><em>02</em></div>
+      <h3>Caixa Rápido</h3>
+      <p>Receita já no primeiro mês. Reativação de base, oferta irresistível, cadência de disparo. O cliente recupera parte do investimento antes do programa principal entrar em escala.</p>
+    </div>
+
+    <div class="pilar">
+      <span class="pilar-week">Semanas 04–09</span>
+      <div class="pilar-num"><em>03</em></div>
+      <h3>Arquitetura Digital</h3>
+      <p>O motor de atração. Posicionamento, calendário de conteúdo, criativos, landing page e a primeira campanha de tráfego ativa. Sai da dependência de indicação — entra na previsibilidade.</p>
+    </div>
+
+    <div class="pilar">
+      <span class="pilar-week">Semanas 08–12</span>
+      <div class="pilar-num"><em>04</em></div>
+      <h3>Engenharia de Receita</h3>
+      <p>Time comercial interno, processo de vendas, scripts validados e previsibilidade de fechamento. A operação que escala sem depender de você sentado na cadeira.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CASE ========== -->
+<section id="caso">
+  <p class="section-meta">04 · Caso real</p>
+  <span class="case-label">Médica de Blefaroplastia · 2026</span>
+  <h2>De dois dias de venda no mês <em>a +R$ 300 mil em quatro semanas.</em></h2>
+
+  <div class="case-grid">
+    <div class="case-col">
+      <p class="case-heading">Antes</p>
+      <div class="case-row"><strong>1–2</strong> consultas pagas por semana</div>
+      <div class="case-row"><strong>2–3</strong> dias de venda no mês inteiro</div>
+      <div class="case-row"><strong>R$ 40–60k</strong> de faturamento mensal</div>
+      <div class="case-row"><strong>R$ 5k/mês</strong> em equipe externa — que não convertia</div>
+      <div class="case-row"><strong>R$ 5k/mês</strong> em anúncio</div>
+    </div>
+
+    <div class="case-arrow"><em>→</em></div>
+
+    <div class="case-col depois">
+      <p class="case-heading">Depois — 4 semanas</p>
+      <div class="case-big"><em>+R$ 300k</em></div>
+      <div class="case-row" style="margin-bottom:16px">em consultas pagas + procedimentos</div>
+      <div class="case-row"><strong>Mesmo</strong> investimento em anúncio (R$ 5k/mês)</div>
+      <div class="case-row"><strong>Comercial 01</strong> interno (R$ 4k/mês)</div>
+      <div class="case-row"><strong>Equipe externa</strong> desligada</div>
+    </div>
+  </div>
+
+  <div class="case-disclaimer">
+    Resultados variam conforme estrutura, especialidade e mercado de cada cliente. O que se mantém é a metodologia.
+  </div>
+</section>
+
+<!-- ========== CREDIBILIDADE ========== -->
+<section id="credibilidade">
+  <p class="section-meta">05 · Credibilidade</p>
+  <div class="cred">
+    <div class="cred-stat">+<em>200</em></div>
+    <p class="cred-sub"><strong>Negócios acelerados com a mesma metodologia.</strong> Agora cem por cento aplicada a consultórios e clínicas de saúde estética.</p>
+
+    <div class="cred-meta">
+      <div>
+        <span>+200</span>
+        Negócios acelerados
+      </div>
+      <div>
+        <span>12 semanas</span>
+        Ciclo de implementação
+      </div>
+      <div>
+        <span>04 pilares</span>
+        Sequência não-negociável
+      </div>
+      <div>
+        <span>2026</span>
+        Operações iniciadas
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOUNDER ========== -->
+<section id="founder">
+  <p class="section-meta">06 · Founder</p>
+  <h2>O construtor por <em>trás da Pulso.</em></h2>
+
+  <div class="founder">
+    <div class="founder-card">
+      <div class="founder-name">Sâmeque Santana</div>
+      <div class="founder-role">Founder & CEO</div>
+      <div class="founder-stats">
+        <div><span>Formação</span>Economia · USP-RP</div>
+        <div><span>Negócios acelerados</span>+200</div>
+        <div><span>Instagram</span>@osamequesantana</div>
+        <div><span>Audiência</span>53k seguidores</div>
+      </div>
+    </div>
+
+    <div class="founder-bio">
+      <p>Sâmeque Santana é fundador e CEO da Pulso. <strong>Conduziu a operação comercial de mais de 200 negócios</strong> antes de focar 100% em saúde estética premium — onde a combinação de ticket alto, ciclo curto e dependência de indicação criou o terreno mais fértil para a metodologia.</p>
+      <p>Primeiro lugar de turma em Economia pela USP-RP, opera com base em <strong>Extreme Ownership, arquitetura de receita e produtização radical de serviço</strong>. Constrói Pulso em público no Instagram <a href="https://instagram.com/osamequesantana" target="_blank" rel="noopener">@osamequesantana</a> — 53 mil seguidores acompanhando, em tempo real, o que funciona e o que não funciona.</p>
+      <p style="color:var(--text-3);font-family:var(--mono);font-size:13px;letter-spacing:.02em;line-height:1.7">"Consultório premium não tem problema de demanda. Tem problema de operação. A Pulso resolve operação."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FINAL CTA ========== -->
+<section class="final" id="contato">
+  <div class="final-inner">
+    <p class="section-meta">07 · Conversar</p>
+    <h2>Diagnóstico inicial, <em>direto com a Pulso.</em></h2>
+    <p>Conversa de quinze a vinte minutos. Sem pitch enlatado. Você apresenta o cenário, a gente devolve um corte honesto sobre se faz sentido — ou não — avançar.</p>
+    <a href="#" class="cta" id="whatsCta">Falar com a Pulso no WhatsApp →</a>
+    <p style="margin-top:24px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-3)">Atendimento em horário comercial · Resposta no mesmo dia</p>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Pulso</div>
+      <div style="margin-top:8px">A operação comercial dos consultórios de saúde estética premium.</div>
+    </div>
+    <div class="footer-meta">
+      usepulso.org<br>
+      São Paulo · Brasil<br>
+      © 2026 Pulso
+    </div>
+  </div>
+</footer>
+
+<script>
+// Reveal on scroll
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');observer.unobserve(e.target)}})
+},{threshold:.12});
+document.querySelectorAll('section').forEach(el=>{el.classList.add('reveal');observer.observe(el)});
+</script>
+
+</body>
+</html>
