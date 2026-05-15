@@ -248,6 +248,71 @@ footer{padding:60px var(--pad) 40px;border-top:1px solid var(--line);font-family
 
 /* ============ SELECTION ============ */
 ::selection{background:var(--accent);color:#fff}
+
+/* ============ MOBILE TUNING + UPGRADES ============ */
+.hero{min-height:100dvh}
+.pilar{transition:background .35s ease,box-shadow .25s ease}
+.pilar:hover{background:var(--bg-2);box-shadow:inset 2px 0 0 var(--accent)}
+
+@media (max-width:720px){
+  .hero{padding-top:110px;padding-bottom:40px}
+  .hero-eyebrow{margin-bottom:32px}
+  .hero-sub{margin-top:32px}
+  .hero-foot{margin-top:48px}
+  h2{margin-bottom:24px}
+  .pilar{padding:36px 28px}
+  .pilar-num{font-size:60px;margin-bottom:24px}
+  .pilar h3{font-size:28px}
+  .case-col{padding:32px 24px}
+  .case-arrow{padding:20px}
+  .case-big{margin:4px 0 12px}
+  .position-grid p{font-size:16px}
+  .icp-item{padding:24px 0}
+  .icp-title{font-size:24px}
+  .founder-card{padding:24px}
+  .founder-name{font-size:30px}
+  .founder-bio p{font-size:16px}
+  .final{padding:80px var(--pad) 60px}
+  .final h2{margin-bottom:32px}
+  .cta{padding:16px 22px;font-size:14px}
+}
+
+@media (max-width:600px){
+  .cred-meta{gap:20px 28px}
+  .cred-meta div{flex:1 1 calc(50% - 14px);min-width:0}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:32px}
+  .footer-meta{text-align:left}
+}
+
+/* ============ SCROLL PROGRESS ============ */
+.scroll-progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:60;pointer-events:none;transition:width .08s linear;box-shadow:0 0 8px rgba(255,45,95,.5)}
+
+/* ============ FLOATING MOBILE CTA ============ */
+.float-cta{
+  display:none;position:fixed;bottom:20px;right:20px;z-index:55;
+  background:var(--accent);color:#fff;
+  width:56px;height:56px;border-radius:50%;
+  align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:28px;font-style:italic;line-height:1;
+  box-shadow:0 8px 24px rgba(255,45,95,.4);
+  transition:transform .2s ease,box-shadow .2s ease;
+  animation:floatPulse 2.6s ease-in-out infinite;
+}
+.float-cta:hover,.float-cta:active{transform:translateY(-2px) scale(1.04);box-shadow:0 12px 32px rgba(255,45,95,.55)}
+@keyframes floatPulse{0%,100%{box-shadow:0 8px 24px rgba(255,45,95,.4)}50%{box-shadow:0 8px 32px rgba(255,45,95,.65)}}
+@media (max-width:720px){.float-cta{display:inline-flex}}
+
+/* ============ NAV MOBILE CTA ============ */
+.nav-cta-mobile{display:none}
+@media (max-width:720px){
+  .nav-cta-mobile{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;
+    color:var(--accent);border:1px solid var(--accent);
+    padding:8px 12px;transition:background .2s ease,color .2s ease;
+  }
+  .nav-cta-mobile:active,.nav-cta-mobile:hover{background:var(--accent);color:#fff}
+}
 </style>
 </head>
 
@@ -255,13 +320,14 @@ footer{padding:60px var(--pad) 40px;border-top:1px solid var(--line);font-family
 
 <!-- ========== NAV ========== -->
 <nav>
-  <a href="#" class="brand"><span class="brand-dot"></span>Pulso</a>
+  <a href="#top" class="brand"><span class="brand-dot"></span>Pulso</a>
   <div class="nav-links">
     <a href="#metodo">Método</a>
     <a href="#caso">Caso</a>
     <a href="#founder">Founder</a>
     <a href="#contato">Contato</a>
   </div>
+  <a href="#contato" class="nav-cta-mobile">Conversar →</a>
 </nav>
 
 <!-- ========== HERO ========== -->
@@ -275,7 +341,7 @@ footer{padding:60px var(--pad) 40px;border-top:1px solid var(--line);font-family
   <div class="hero-foot">
     <div class="hero-meta">
       Saúde estética premium<br>
-      <span>Implanto · Plástica · Dermato · Dentista high-ticket</span>
+      <span>Plástica · Dermato · Implanto · Capilar · Bariátrica</span>
     </div>
     <a href="#metodo" class="scroll-hint">Conheça o método</a>
   </div>
@@ -310,10 +376,16 @@ footer{padding:60px var(--pad) 40px;border-top:1px solid var(--line);font-family
   <p class="lede" style="margin-bottom:48px">Médicos, dentistas e cirurgiões com procedimento high-ticket que já saturaram a indicação e querem construir aquisição previsível.</p>
 
   <ul class="icp-list">
-    <li class="icp-item"><span class="icp-num">01</span><span class="icp-title">Implantodontistas e dentistas high-ticket</span></li>
-    <li class="icp-item"><span class="icp-num">02</span><span class="icp-title">Cirurgiões plásticos</span></li>
-    <li class="icp-item"><span class="icp-num">03</span><span class="icp-title">Dermatologistas</span></li>
-    <li class="icp-item"><span class="icp-num">04</span><span class="icp-title">Médicos de saúde estética</span></li>
+    <li class="icp-item"><span class="icp-num">01</span><span class="icp-title">Cirurgiões plásticos</span></li>
+    <li class="icp-item"><span class="icp-num">02</span><span class="icp-title">Dermatologistas</span></li>
+    <li class="icp-item"><span class="icp-num">03</span><span class="icp-title">Medicina estética</span></li>
+    <li class="icp-item"><span class="icp-num">04</span><span class="icp-title">Harmonização orofacial</span></li>
+    <li class="icp-item"><span class="icp-num">05</span><span class="icp-title">Implantodontia</span></li>
+    <li class="icp-item"><span class="icp-num">06</span><span class="icp-title">Odontologia estética</span></li>
+    <li class="icp-item"><span class="icp-num">07</span><span class="icp-title">Tricologia e transplante capilar</span></li>
+    <li class="icp-item"><span class="icp-num">08</span><span class="icp-title">Cirurgia bariátrica e metabólica</span></li>
+    <li class="icp-item"><span class="icp-num">09</span><span class="icp-title">Ginecologia estética e íntima</span></li>
+    <li class="icp-item"><span class="icp-num">10</span><span class="icp-title">Otorrino estética e rinoplastia</span></li>
   </ul>
 
   <div class="icp-floor">
@@ -470,12 +542,27 @@ footer{padding:60px var(--pad) 40px;border-top:1px solid var(--line);font-family
   </div>
 </footer>
 
+<!-- Scroll progress + floating mobile CTA -->
+<div class="scroll-progress" id="scrollProgress"></div>
+<a href="#contato" class="float-cta" aria-label="Falar com a Pulso">→</a>
+
 <script>
 // Reveal on scroll
 const observer=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');observer.unobserve(e.target)}})
 },{threshold:.12});
 document.querySelectorAll('section').forEach(el=>{el.classList.add('reveal');observer.observe(el)});
+
+// Scroll progress bar
+const progress=document.getElementById('scrollProgress');
+const updateProgress=()=>{
+  const h=document.documentElement;
+  const max=Math.max(h.scrollHeight-h.clientHeight,1);
+  progress.style.width=((h.scrollTop/max)*100)+'%';
+};
+window.addEventListener('scroll',updateProgress,{passive:true});
+window.addEventListener('resize',updateProgress);
+updateProgress();
 </script>
 
 </body>
